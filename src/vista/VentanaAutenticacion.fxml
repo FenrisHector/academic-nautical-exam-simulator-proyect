@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="345.0" prefWidth="395.0" stylesheets="@estiloTrabajo.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLAutenticarseController">
+   <children>
+      <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #0685BC;">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Iniciar Sesión">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="36.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <GridPane hgap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="351.0" prefWidth="673.0" style="-fx-background-color: white;" vgap="12.0" VBox.vgrow="ALWAYS">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="454.6666259765625" minWidth="-Infinity" prefWidth="357.33331298828125" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="203.3333638509115" prefWidth="300.66667683919275" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="-Infinity" percentHeight="22.0" vgrow="NEVER" />
+            <RowConstraints />
+            <RowConstraints minHeight="10.0" percentHeight="22.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" percentHeight="56.0" prefHeight="30.0" />
+         </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_LEFT" minWidth="700.0" spacing="10.0" GridPane.columnSpan="2" GridPane.rowIndex="0" GridPane.vgrow="NEVER">
+               <children>
+                  <VBox alignment="CENTER_LEFT" fillWidth="false">
+                     <children>
+                        <Label text="Nombre de usuario:" textFill="#025477">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></Label>
+                        <TextField fx:id="usuarioField" minWidth="150.0" prefWidth="300.0" promptText="Pepe1234">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></TextField>
+                        <Label fx:id="emailError" text="Nombre de usuario incorrecto" textFill="#ca0505" visible="false" />
+                     </children>
+                  </VBox>
+               </children>
+               <GridPane.margin>
+                  <Insets left="12.0" />
+               </GridPane.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" minWidth="650.0" prefHeight="53.0" prefWidth="624.0" spacing="10.0" GridPane.rowIndex="2">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="69.0" prefWidth="316.0">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="53.0" prefWidth="438.0">
+                           <children>
+                              <Label text="Contraseña:" textFill="#025477">
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Label>
+                              <PasswordField fx:id="passwordField" prefHeight="30.0" prefWidth="300.0" promptText="Contraseña">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <Label fx:id="passwordError" prefHeight="17.0" prefWidth="347.0" text="Contraseña incorrecta" textFill="#ca0505" visible="false" />
+                           </children>
+                           <padding>
+                              <Insets left="12.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefWidth="630.0" spacing="25.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <children>
+                  <Button fx:id="RegistrarseButton" mnemonicParsing="false" onAction="#RegistrarseButtonAction" text="Registrarse">
+                     <HBox.margin>
+                        <Insets right="275.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="bAccept" minWidth="80.0" mnemonicParsing="false" onAction="#handleBAcceptOnAction" prefWidth="100.0" style="-fx-background-color: #0685BC; -fx-text-fill: #FFFFFF;" text="Aceptar" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/accept_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="bCancel" minWidth="80.0" mnemonicParsing="false" onAction="#handleBCanceltOnAction" prefWidth="100.0" style="-fx-background-color: #0685BC; -fx-text-fill: #FFFFFF;" text="Cancel" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/cancel_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets bottom="20.0" right="20.0" top="20.0" />
+               </GridPane.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="24.0" left="12.0" right="12.0" top="12.0" />
+         </padding>
+      </GridPane>
+   </children>
+</VBox>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="345.0" prefWidth="395.0" stylesheets="@estiloTrabajo.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLRegistrarseController">
+   <children>
+      <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #0685BC;">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrarse">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="36.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <GridPane hgap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="351.0" prefWidth="673.0" style="-fx-background-color: white;" vgap="12.0" VBox.vgrow="ALWAYS">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="454.6666259765625" minWidth="-Infinity" prefWidth="357.33331298828125" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="203.3333638509115" prefWidth="300.66667683919275" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="-Infinity" percentHeight="15.0" vgrow="NEVER" />
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="-Infinity" percentHeight="15.0" prefHeight="5.0" vgrow="ALWAYS" />
+            <RowConstraints />
+            <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" percentHeight="8.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" />
+         </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_LEFT" minWidth="700.0" spacing="10.0" GridPane.columnSpan="2" GridPane.rowIndex="0" GridPane.vgrow="NEVER">
+               <children>
+                  <VBox alignment="CENTER_LEFT" fillWidth="false">
+                     <children>
+                        <Label text="Nombre de usuario:" textFill="#025477" />
+                        <TextField fx:id="usuarioField" minHeight="26.0" minWidth="150.0" prefHeight="26.0" prefWidth="350.0" promptText="Pepe123" />
+                     </children>
+                  </VBox>
+                  <Label fx:id="usuarioError" text="Nombre de usuario ya en uso" textFill="#ca0505" translateY="5.0" visible="false" />
+               </children>
+               <GridPane.margin>
+                  <Insets left="12.0" />
+               </GridPane.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" minWidth="700.0" spacing="10.0" GridPane.rowIndex="1">
+               <children>
+                  <VBox alignment="CENTER_LEFT" fillWidth="false">
+                     <children>
+                        <Label text="Correo electronico:" textFill="#025477" />
+                        <TextField fx:id="emailField" maxHeight="26.0" maxWidth="349.0" minWidth="200.0" prefHeight="26.0" prefWidth="349.0" promptText="yourEmail@domain.com" />
+                     </children>
+                     <padding>
+                        <Insets left="12.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <Label fx:id="emailError" text="Correo incorrecto" textFill="#ca0505" translateY="5.0" visible="false" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" minWidth="650.0" prefHeight="53.0" prefWidth="624.0" spacing="10.0" GridPane.rowIndex="3">
+               <children>
+                  <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="53.0" prefWidth="438.0">
+                     <children>
+                        <Label text="Contraseña:" textFill="#025477">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <PasswordField fx:id="passwordField" prefWidth="200.0" promptText="Contraseña" />
+                     </children>
+                     <padding>
+                        <Insets left="12.0" />
+                     </padding>
+                  </VBox>
+                  <Label fx:id="passwordError" prefHeight="17.0" prefWidth="588.0" text="La contraseña debe contener entre 8 y 20 caracteres, mayúsucula y número " textFill="#ca0505" visible="false" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" minWidth="700.0" spacing="10.0" GridPane.rowIndex="5">
+               <children>
+                  <VBox alignment="CENTER_LEFT" fillWidth="false">
+                     <children>
+                        <Label text="Fecha de nacimiento:" textFill="#025477" />
+                        <DatePicker fx:id="dateField" maxWidth="200.0" minWidth="200.0" prefWidth="219.0" />
+                     </children>
+                     <padding>
+                        <Insets left="12.0" />
+                     </padding>
+                  </VBox>
+                  <Label fx:id="dateError" minHeight="26.0" minWidth="150.0" prefHeight="26.0" prefWidth="350.0" text="Debes ser mayor de 16" textFill="#ca0505" translateY="5.0" visible="false" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" spacing="25.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+               <children>
+                  <Button fx:id="bAccept" minWidth="80.0" mnemonicParsing="false" onAction="#handleBAcceptOnAction" prefWidth="100.0" style="-fx-background-color: #0685BC; -fx-text-fill: #FFFFFF;" text="Register" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/accept_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="bCancel" minWidth="80.0" mnemonicParsing="false" onAction="#handleBCanceltOnAction" prefWidth="100.0" style="-fx-background-color: #0685BC; -fx-text-fill: #FFFFFF;" text="Cancel" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/cancel_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets bottom="20.0" right="20.0" top="20.0" />
+               </GridPane.margin>
+            </HBox>
+            <Separator maxHeight="3.0" minHeight="3.0" prefHeight="3.0" prefWidth="200.0" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="12.0" />
+               </GridPane.margin>
+            </Separator>
+            <HBox prefHeight="54.0" prefWidth="384.0" GridPane.rowIndex="6">
+               <children>
+                  <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="61.0" prefWidth="210.0">
+                     <children>
+                        <Label text="Avatar:" textFill="#025477">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <HBox minWidth="230.0" prefHeight="26.0" prefWidth="229.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Button fx:id="PredAvatarButton" maxWidth="160.0" minWidth="160.0" mnemonicParsing="false" onAction="#predAvatarAction" prefWidth="160.0" text="Avatar predeterminado">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin></Button>
+                              <Button fx:id="subirAvatarButton" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#subirAvatar" prefHeight="26.0" prefWidth="100.0" text="Subir avatar" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="12.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="24.0" left="12.0" right="12.0" top="12.0" />
+         </padding>
+      </GridPane>
+   </children>
+</VBox>

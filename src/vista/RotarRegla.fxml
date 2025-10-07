@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="238.0" prefWidth="157.0" spacing="20.0" stylesheets="@estiloTrabajo.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.RotarReglaController">
+   <children>
+      <Text fx:id="titleText" strokeType="OUTSIDE" strokeWidth="0.0" text="Rotar regla" wrappingWidth="126.4580078125">
+         <font>
+            <Font size="26.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Text>
+      <Separator maxHeight="3.0" maxWidth="140.0" minHeight="3.0" minWidth="140.0" prefHeight="3.0" prefWidth="140.0" />
+      <Slider fx:id="rotationSlider" max="360.0">
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" top="20.0" />
+         </VBox.margin>
+      </Slider>
+      <Label fx:id="rotationLabel" text="0">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </Label>
+   </children>
+</VBox>
