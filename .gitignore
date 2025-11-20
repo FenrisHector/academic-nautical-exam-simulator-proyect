@@ -1,0 +1,16 @@
+﻿# NetBeans / Ant
+/nbproject/private/
+/build/
+/dist/
+/generated-sources/
+/ap-source-output/
+/empty/
+
+# VS Code
+.vscode/
+
+# Java / SO
+*.class
+*.log
+.DS_Store
+Thumbs.db

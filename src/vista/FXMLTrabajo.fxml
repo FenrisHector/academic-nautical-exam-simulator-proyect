@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="borderPane" prefHeight="572.0" prefWidth="853.0" stylesheets="@estiloTrabajo.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLTrabajoController">
+   <top>
+      <HBox alignment="CENTER_LEFT" fillHeight="false" maxHeight="40.0" minHeight="40.0" minWidth="875.0" prefHeight="40.0" prefWidth="875.0" spacing="5.0" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <HBox alignment="CENTER_LEFT" maxHeight="30.0" minHeight="30.0" minWidth="800.0" prefHeight="30.0" prefWidth="800.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <MenuBar maxHeight="40.0" minHeight="45.0" minWidth="725.0" prefHeight="40.0" HBox.hgrow="ALWAYS">
+                     <menus>
+                        <Menu fx:id="menuMarcarPunto" mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="menuItemIniciarPunto" mnemonicParsing="false" onAction="#seleccionarHerramientaMarcarPunto">
+                                 <graphic>
+                                    <HBox prefHeight="20.0" prefWidth="105.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Iniciar marca" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false">
+                                 <graphic>
+                                    <MenuButton fx:id="mbMarcarPunto" mnemonicParsing="false" text="Tipo marca">
+                                       <items>
+                                          <MenuItem fx:id="menuItemMarcaCirculo" mnemonicParsing="false" onAction="#seleccionarMarcaCirculo" text="Circulo">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../resources/circulo%20negro.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </MenuItem>
+                                          <MenuItem fx:id="menuItemMarcaCruz" mnemonicParsing="false" onAction="#seleccionarMarcaCruz" text="Cruz">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../resources/cancelar.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </MenuItem>
+                                          <MenuItem fx:id="menuItemMarcaAsterisco" mnemonicParsing="false" onAction="#seleccionarMarcaAsterisco" text="Asterisco">
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../resources/asterisco.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </MenuItem>
+                                          <MenuItem fx:id="menuItemMarcaEstrella" mnemonicParsing="false" onAction="#seleccionarMarcaEstrella" text="Estrella">
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../resources/estrella-en-negro-de-forma-de-cinco-puntas.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </MenuItem>
+                                       </items>
+                                    </MenuButton>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false">
+                                 <graphic>
+                                    <ColorPicker fx:id="colorPickkerPunto">
+                                       <value>
+                                          <Color red="1.0" />
+                                       </value>
+                                    </ColorPicker>
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <graphic>
+                              <HBox fx:id="hboxMarcarPunto" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                 <children>
+                                    <ImageView fx:id="ivMenuMarcarPunto" fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/6355644.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </Menu>
+                        <Menu fx:id="menuTrazarLinea" mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="menuItemIniciarLinea" mnemonicParsing="false" onAction="#seleccionarTrazarLinea">
+                                 <graphic>
+                                    <HBox prefHeight="20.0" prefWidth="105.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Iniciar trazado" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem fx:id="menuGrosorLinea" mnemonicParsing="false">
+                                 <graphic>
+                                    <VBox prefHeight="20.0" prefWidth="150.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grosor:" />
+                                          <Slider fx:id="sliderGrosorLinea" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" style="-fx-text-fill: #64B5F6;" value="4.0" />
+                                       </children>
+                                    </VBox>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false">
+                                 <graphic>
+                                    <ColorPicker fx:id="colorPickerLinea">
+                                       <value>
+                                          <Color red="1.0" />
+                                       </value>
+                                    </ColorPicker>
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <graphic>
+                              <HBox fx:id="hboxTrazarLinea" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                 <children>
+                                    <ImageView fx:id="ivMenuTrazarLinea" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/lapiz.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </Menu>
+                        <Menu fx:id="menuTrazarArco" mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="menuItemIniciarArco" mnemonicParsing="false" onAction="#seleccionarTrazarArco">
+                                 <graphic>
+                                    <HBox prefHeight="20.0" prefWidth="105.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="iniciar arco" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false">
+                                 <graphic>
+                                    <VBox prefHeight="20.0" prefWidth="150.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grosor:" />
+                                          <Slider fx:id="sliderGrosorArco" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" style="-fx-text-fill: #64B5F6;" value="4.0" />
+                                       </children>
+                                    </VBox>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false">
+                                 <graphic>
+                                    <ColorPicker fx:id="colorPickerArco">
+                                       <value>
+                                          <Color red="1.0" />
+                                       </value>
+                                    </ColorPicker>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false">
+                                 <graphic>
+                                    <MenuButton mnemonicParsing="false" text="Tipo de radio">
+                                       <items>
+                                          <MenuItem fx:id="menuItemRadioLibre" mnemonicParsing="false" onAction="#seleccionarArcoRadioLibre" text="radiolibre" />
+                                          <MenuItem fx:id="menuItemRadioFijo" mnemonicParsing="false" onAction="#seleccionarArcoRadioFijo" text="radiofijo">
+                                             <graphic>
+                                                <TextField fx:id="textFieldRadioArco" />
+                                             </graphic>
+                                          </MenuItem>
+                                       </items>
+                                    </MenuButton>
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <graphic>
+                              <HBox fx:id="hboxTrazarArco" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                 <children>
+                                    <ImageView fx:id="ivMenuTrazarArco" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/compas-de-dibujo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </Menu>
+                        <Menu fx:id="menuAnotarTexto" mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="menuItemAnotarTexto" mnemonicParsing="false" onAction="#seleccionarAnotarTexto">
+                                 <graphic>
+                                    <HBox prefHeight="20.0" prefWidth="105.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Iniciar texto" />
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false">
+                                 <graphic>
+                                    <TextField fx:id="textFieldTamanoTexto" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem mnemonicParsing="false">
+                                 <graphic>
+                                    <ColorPicker fx:id="colorPickerTexto">
+                                       <value>
+                                          <Color red="1.0" />
+                                       </value>
+                                    </ColorPicker>
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <graphic>
+                              <HBox fx:id="hboxAnotarTexto" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                 <children>
+                                    <ImageView fx:id="ivMenuAnotarTexto" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/texto%20(1).png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </Menu>
+                        <Menu fx:id="menuColor" mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="menuItemEditarColor" mnemonicParsing="false" onAction="#seleccionarEditarColor">
+                                 <graphic>
+                                    <ColorPicker fx:id="colorPickerEdicion" onAction="#onMenuColorPicked">
+                                       <value>
+                                          <Color red="1.0" />
+                                       </value>
+                                    </ColorPicker>
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <graphic>
+                              <HBox fx:id="hboxColor" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                 <children>
+                                    <ImageView fx:id="ivMenuColor" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/arte.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </Menu>
+                        <Menu fx:id="menuEliminarMarca" mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="menuItemEliminarMarcaTool" mnemonicParsing="false" onAction="#seleccionarEliminarElemento" text="Eliminar elemento" />
+                           </items>
+                           <graphic>
+                              <HBox fx:id="hboxEliminarMarca" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                 <children>
+                                    <ImageView fx:id="ivMenuEliminarMarca" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/papelera-de-reciclaje.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </Menu>
+                        <Menu fx:id="menuLimpiarCarta" mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="menuItemLimpiarCartaTool" mnemonicParsing="false" onAction="#seleccionarLimpiarCarta" text="Limpiar carta" />
+                           </items>
+                           <graphic>
+                              <HBox fx:id="hboxLimpiarCarta" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                 <children>
+                                    <ImageView fx:id="ivMenuLimpiarCarta" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/escoba.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </Menu>
+                        <Menu fx:id="menuHerramienta" mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="menuItemTransportador" mnemonicParsing="false" onAction="#seleccionarTransportador" text="Transportador ángulos" />
+                              <MenuItem fx:id="btnRegla" mnemonicParsing="false" onAction="#seleccionarRegla" text="Regla" />
+                              <MenuItem fx:id="menuItemLyL" mnemonicParsing="false" onAction="#seleccionarLatLonMarker" text="Longitud y latitud" />
+                           </items>
+                           <graphic>
+                              <HBox fx:id="hboxHerramienta" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                 <children>
+                                    <ImageView fx:id="ivMenuAyuda" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/regla%20(1).png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </Menu>
+                        <Menu fx:id="menuAyuda" mnemonicParsing="false">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#about" text="Acerca de" />
+                           </items>
+                           <graphic>
+                              <HBox fx:id="hboxAyuda" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" prefHeight="30.0" prefWidth="30.0">
+                                 <children>
+                                    <ImageView fx:id="ivMenuHerramienta" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/signo-de-interrogacion.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </Menu>
+                     </menus>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </MenuBar>
+               </children>
+            </HBox>
+            <MenuButton fx:id="mbPerfil" maxHeight="40.0" maxWidth="70.0" minHeight="40.0" minWidth="70.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0">
+               <items>
+                  <MenuItem fx:id="miEditarPerfil" mnemonicParsing="false" onAction="#onEditarPerfil" text="Editar perfil" />
+                  <MenuItem fx:id="estadisticasButton" mnemonicParsing="false" onAction="#onEstadisticas" text="Estadíticas" />
+                  <MenuItem fx:id="miCerrarAplicacion" mnemonicParsing="false" onAction="#onCerrarAplicacion" text="Cerrar Sesión" />
+               </items>
+               <graphic>
+                  <ImageView fx:id="ivPerfil" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/usuario.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MenuButton>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <ScrollPane fx:id="map_scrollpane" minHeight="480.0" minWidth="675.0" onMouseMoved="#showPosition" onMousePressed="#addPoi" pannable="true" prefHeight="480.0" prefWidth="675.0" BorderPane.alignment="CENTER">
+         <content>
+            <Pane fx:id="paneCarta" minHeight="5750.0" minWidth="8100.0" prefHeight="5750.0" prefWidth="8100.0">
+               <children>
+                  <ImageView fitHeight="5750.0" fitWidth="8100.0" layoutX="14.0" layoutY="2.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../resources/carta_nautica.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" maxHeight="35.0" minHeight="35.0" minWidth="820.0" prefHeight="35.0" prefWidth="820.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="buttonTerminarProblema" maxHeight="28.0" maxWidth="130.0" minHeight="28.0" minWidth="130.0" mnemonicParsing="false" onAction="#terminarProblemaOnAction" prefHeight="28.0" prefWidth="130.0" text="Terminar Problema">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonElegirProblema" maxHeight="28.0" maxWidth="120.0" minHeight="28.0" minWidth="120.0" mnemonicParsing="false" onAction="#elegirProblemaOnAction" prefHeight="28.0" prefWidth="120.0" text="Elegir ejercicio" />
+            <HBox alignment="CENTER_RIGHT" maxHeight="35.0" minHeight="35.0" minWidth="590.0" prefHeight="35.0" prefWidth="590.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label maxHeight="20.0" maxWidth="40.0" minHeight="20.0" minWidth="40.0" prefHeight="20.0" prefWidth="40.0" text="Zoom">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" mnemonicParsing="false" onAction="#zoomOut" prefHeight="27.0" prefWidth="27.0" text="-">
+                     <HBox.margin>
+                        <Insets right="4.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Slider fx:id="zoom_slider" maxHeight="15.0" maxWidth="170.0" minHeight="15.0" minWidth="170.0" prefHeight="15.0" prefWidth="170.0" HBox.hgrow="SOMETIMES" />
+                  <Button maxHeight="27.0" maxWidth="27.0" minHeight="27.0" minWidth="27.0" mnemonicParsing="false" onAction="#zoomIn" prefHeight="27.0" prefWidth="27.0" text="+" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="3.0" left="10.0" right="10.0" top="2.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="3.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <left>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="taProblem" editable="false" maxWidth="200.0" minHeight="430.0" minWidth="200.0" prefHeight="481.0" prefWidth="200.0" />
+            <VBox maxHeight="72.0" maxWidth="195.0" minHeight="72.0" minWidth="195.0" prefHeight="72.0" prefWidth="195.0" VBox.vgrow="NEVER">
+               <children>
+                  <RadioButton fx:id="buttonA" mnemonicParsing="false" text="A">
+                     <VBox.margin>
+                        <Insets top="4.0" />
+                     </VBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="grupoRespuestas" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="buttonB" mnemonicParsing="false" text="B" toggleGroup="$grupoRespuestas" />
+                  <RadioButton fx:id="buttonC" mnemonicParsing="false" text="C" toggleGroup="$grupoRespuestas" />
+                  <RadioButton fx:id="buttonD" mnemonicParsing="false" text="D" toggleGroup="$grupoRespuestas" />
+               </children>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </VBox>
+            <Separator maxHeight="3.0" maxWidth="200.0" minHeight="3.0" minWidth="200.0" prefHeight="3.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Separator>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+</BorderPane>
