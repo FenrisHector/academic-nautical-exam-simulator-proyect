@@ -79,3 +79,29 @@ POI_UPV/
 ├── lib/lib/                       # Libraries (sqlite-jdbc)
 ├── data.db                        # SQLite Database
 └── README.md                      # Documentation
+
+## Author
+
+Héctor Zamorano García
+
+Project developed collaboratively with:
+* Unai Soler
+* Jordi Encabo
+
+## Notes
+
+This project was created for academic and training purposes.  
+Occasional AI assistance (Copilot) was used only for syntax suggestions.  
+All architecture, logic, UX decisions, and debugging were performed manually.
+
+## Version and Requirements
+
+* Java 17+
+* JavaFX 21
+* SQLite JDBC Driver
+* Scene Builder (optional, for editing FXML views)
+
+## License
+
+This project is provided for educational use.  
+Redistribution or commercial use requires explicit permission from the authors.
