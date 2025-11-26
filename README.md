@@ -1,81 +1,81 @@
 # Academic Nautical Exam Simulator (JavaFX)
 
-**Proyecto de práctica y simulación de ejercicios de carta náutica desarrollado en Java + JavaFX con herramientas interactivas y módulo de evaluación.**
+**Practice and simulation project for nautical chart exercises developed in Java + JavaFX with interactive tools and evaluation module.**
 
-## Descripción
+## Description
 
-Este proyecto permite trabajar sobre una carta náutica digital simulando la experiencia de un cuaderno de ejercicios real. La aplicación ofrece una suite de herramientas de dibujo (puntos, líneas, arcos, texto) e instrumental de navegación (transportador y regla rotatoria) para resolver problemas de navegación costera.
+This project allows working on a digital nautical chart simulating the experience of a real exercise workbook. The application offers a suite of drawing tools (points, lines, arcs, text) and navigation instruments (protractor and rotating ruler) to solve coastal navigation problems.
 
-El desarrollo fue realizado en equipo junto a dos compañeros (**Unai Soler** y **Jordi Encabo**). El trabajo fue colaborativo, abarcando desde el diseño de vistas en Scene Builder hasta la lógica de los controladores y la persistencia de datos. El objetivo principal fue construir una experiencia de práctica fluida utilizando la arquitectura **JavaFX (FXML + Controladores)** y gestionar usuarios y sesiones mediante **SQLite**.
+The development was carried out as a team together with two colleagues (**Unai Soler** and **Jordi Encabo**). The work was collaborative, covering everything from view design in Scene Builder to controller logic and data persistence. The main goal was to build a smooth practice experience using the **JavaFX architecture (FXML + Controllers)** and manage users and sessions through **SQLite**.
 
-Se implementó una interfaz para la resolución de problemas tipo test (enunciado + 4 opciones), validación de soluciones y almacenamiento de estadísticas de aciertos y fallos. Durante el desarrollo se utilizó soporte puntual de inteligencia artificial (Copilot) para sugerencias de sintaxis, pero la arquitectura, la lógica de negocio y la depuración fueron realizadas manualmente.
+An interface for solving multiple-choice questions (statement + 4 options), solution validation, and storage of correct/incorrect statistics was implemented. During development, occasional AI assistance (Copilot) was used for syntax suggestions, but the architecture, business logic, and debugging were all done manually.
 
-## Objetivos
+## Objectives
 
-* **Simulación de Carta:** Practicar conceptos básicos de navegación utilizando herramientas visuales precisas sobre un lienzo digital.
-* **Módulo de Evaluación:** Resolver problemas tipo test y registrar automáticamente los aciertos y fallos por sesión.
-* **Gestión de Usuarios:** Permitir la creación, autenticación y edición de perfiles (avatar, credenciales, datos personales).
-* **Experiencia de Usuario (UX):** Mantener una interfaz intuitiva con funcionalidades de zoom, arrastre (*pan*), rotación de instrumentos y limpieza rápida del área de trabajo.
+* **Chart Simulation:** Practice basic navigation concepts using precise visual tools on a digital canvas.
+* **Evaluation Module:** Solve multiple-choice problems and automatically record correct and incorrect answers per session.
+* **User Management:** Allow creation, authentication, and editing of profiles (avatar, credentials, personal data).
+* **User Experience (UX):** Maintain an intuitive interface with zoom, panning, instrument rotation, and quick workspace clearing.
 
-## Funcionalidades Principales
+## Main Features
 
-* **Dibujo Técnico:** Trazado de puntos (círculo, cruz, asterisco), líneas con grosor ajustable y arcos (radio fijo o libre) con previsualización en tiempo real.
-* **Edición:** Herramientas de selección, cambio de color, borrado individual y limpieza total del lienzo.
-* **Instrumental:**
-    * **Transportador:** Arrastrable con overlay transparente.
-    * **Regla:** Ventana auxiliar con controles de rotación y arrastre.
-    * **Coordenadas:** Marcador visual de Latitud/Longitud.
-* **Sistema de Problemas:** Selección aleatoria o manual de ejercicios, validación inmediata y *feedback* visual.
-* **Estadísticas:** Panel de consulta de resultados acumulados por usuario.
+* **Technical Drawing:** Plotting of points (circle, cross, asterisk), lines with adjustable thickness, and arcs (fixed or free radius) with real-time preview.
+* **Editing:** Selection tools, color change, individual erase, and full canvas cleaning.
+* **Instruments:**
+    * **Protractor:** Draggable with transparent overlay.
+    * **Ruler:** Auxiliary window with rotation and drag controls.
+    * **Coordinates:** Visual marker for Latitude/Longitude.
+* **Problem System:** Random or manual selection of exercises, immediate validation, and visual feedback.
+* **Statistics:** Panel to view accumulated results per user.
 
-## Datos y Recursos
+## Data and Resources
 
-* **Base de Datos:** SQLite (`data.db` en la raíz). Gestiona las entidades: `User`, `Problem`, `Answer`, `Session`.
-* **Recursos:** Iconos, imágenes de instrumental (regla, transportador) y hojas de estilo CSS ubicados en `resources/`.
-* **Vistas:** Archivos FXML diseñados con Scene Builder ubicados en `vista/`.
+* **Database:** SQLite (`data.db` in the root). Manages the entities: `User`, `Problem`, `Answer`, `Session`.
+* **Resources:** Icons, instrument images (ruler, protractor), and CSS stylesheets located in `resources/`.
+* **Views:** FXML files designed with Scene Builder located in `vista/`.
 
-> **Nota:** Si no se incluye la base de datos real en el repositorio, se proporciona un `data.example.db`. Renómbralo a `data.db` para iniciar la aplicación.
+> **Note:** If the real database is not included in the repository, a `data.example.db` is provided. Rename it to `data.db` to launch the application.
 
-## Metodología
+## Methodology
 
-### 1. Arquitectura JavaFX
-Implementación del patrón MVC mediante FXML para la vista y Clases Java para el control (`Controllers`). Separación lógica entre la interfaz gráfica y el modelo de datos.
+### 1. JavaFX Architecture
+Implementation of the MVC pattern using FXML for the view and Java Classes for control (`Controllers`). Clear separation between the graphical interface and the data model.
 
-### 2. Gestión del Lienzo (Canvas)
-Uso de un `ScrollPane` conteniendo un `Group` para permitir un zoom continuo y navegación fluida sobre la imagen de la carta náutica de alta resolución.
+### 2. Canvas Management
+Use of a `ScrollPane` containing a `Group` to allow continuous zoom and smooth navigation over the high-resolution nautical chart image.
 
-### 3. Lógica de Herramientas
-Gestión de estados mediante un `enum` para controlar el comportamiento del ratón (primer clic, arrastre, segundo clic) y las previsualizaciones de trazo.
+### 3. Tool Logic
+State management using an `enum` to control mouse behavior (first click, drag, second click) and stroke previews.
 
-### 4. Validación con Usuarios
-Se realizaron pruebas informales de usabilidad con un grupo de control de aprox. **50 personas** (entorno local). El feedback permitió refinar la UX:
-* Mejora en la previsualización de líneas y arcos.
-* Tooltips más descriptivos en los botones.
-* Ajuste de la ventana de rotación de la regla a modo *"Always on Top"*.
+### 4. User Validation
+Informal usability tests were conducted with a control group of approx. **50 people** (local environment). The feedback helped refine the UX:
+* Improved preview of lines and arcs.
+* More descriptive tooltips on buttons.
+* Adjustment of the ruler rotation window to *"Always on Top"* mode.
 
-## Estructura del repositorio
+## Repository Structure
 
 ```text
 POI_UPV/
 ├── src/
-│   ├── javafxmlapplication/       # Controladores de la UI
+│   ├── javafxmlapplication/       # UI Controllers
 │   │   ├── FXMLTrabajoController.java
 │   │   ├── FXMLAutenticarseController.java
 │   │   ├── EstadisticasController.java
 │   │   └── ...
-│   └── poiupv/                    # Main y lógica de arranque
+│   └── poiupv/                    # Main and startup logic
 │       ├── PoiUPVApp.java
 │       ├── Poi.java
 │       └── ...
-├── vista/                         # Archivos FXML (Scene Builder)
+├── vista/                         # FXML Files (Scene Builder)
 │   ├── FXMLTrabajo.fxml
 │   ├── VentanaRegistro.fxml
 │   └── ...
-├── resources/                     # Assets gráficos y CSS
+├── resources/                     # Graphic assets and CSS
 │   ├── regla123.png
 │   ├── transportador.png
 │   ├── estiloTrabajo.css
 │   └── ...
-├── lib/lib/                       # Librerías (sqlite-jdbc)
-├── data.db                        # Base de datos SQLite
-└── README.md                      # Documentación
+├── lib/lib/                       # Libraries (sqlite-jdbc)
+├── data.db                        # SQLite Database
+└── README.md                      # Documentation
