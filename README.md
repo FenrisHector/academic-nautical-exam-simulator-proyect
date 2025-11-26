@@ -55,7 +55,7 @@ Informal usability tests were conducted with a control group of approx. **50 peo
 
 ## Repository Structure
 
-```text
+```
 POI_UPV/
 ├── src/
 │   ├── javafxmlapplication/       # UI Controllers
@@ -79,6 +79,7 @@ POI_UPV/
 ├── lib/lib/                       # Libraries (sqlite-jdbc)
 ├── data.db                        # SQLite Database
 └── README.md                      # Documentation
+```
 
 ## Author
 
