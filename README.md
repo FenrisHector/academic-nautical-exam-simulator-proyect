@@ -81,6 +81,15 @@ POI_UPV/
 └── README.md                      # Documentation
 ```
 
+## Distribution Note
+
+This project is distributed as source code and does not include a precompiled executable .jar file. This decision responds to technical and transparency considerations:
+* JavaFX Architecture: Modern JavaFX applications require native libraries specific to each platform (Windows, macOS, Linux) that cannot be packaged universally in a single .jar without specialized tools.
+* External Dependencies: The application uses SQLite JDBC and JavaFX components that require specific classpath configuration, complicating distribution via a simple JAR file.
+* Academic Transparency: By providing the complete source code, the project's transparency is guaranteed and it facilitates code review, debugging, and customization by other developers.
+  
+For a robust multi-platform distribution, it would be recommended to use tools that exceed the academic scope of this project, which is why we opt for distribution as source code with clear compilation instructions.
+
 ## Author
 
 Héctor Zamorano García
@@ -92,7 +101,7 @@ Project developed collaboratively with:
 ## Notes
 
 This project was created for academic and training purposes.  
-Occasional AI assistance (Copilot) was used only for syntax suggestions.  
+Occasional AI assistance (Copilot) was used only for syntax suggestions, materials from Stack Overflow and some technical videos were also consulted.
 All architecture, logic, UX decisions, and debugging were performed manually.
 
 ## Version and Requirements
