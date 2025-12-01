@@ -107,7 +107,7 @@ All architecture, logic, UX decisions, and debugging were performed manually.
 ## Version and Requirements
 
 * Java 17+
-* JavaFX 21
+* JavaFX 24
 * SQLite JDBC Driver
 * Scene Builder (optional, for editing FXML views)
 
